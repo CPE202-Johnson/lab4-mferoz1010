@@ -44,6 +44,7 @@ class TestLab4(unittest.TestCase):
         t_list.add(10)
         self.assertEqual(t_list.pop(0), 10)
         self.assertTrue(t_list.search(10))
+        self.assertEqual(t_list.size(), 1)
 
 
 if __name__ == '__main__': 
