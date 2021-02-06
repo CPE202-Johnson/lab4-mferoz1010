@@ -15,6 +15,12 @@ class TestLab4(unittest.TestCase):
         self.assertTrue(t_list.remove(10))
         t_list.add(10)
         self.assertEqual(t_list.pop(0), 10)
+        t_list.add(20)
+        t_list.add(30)
+        n1 = Node(10)
+        n2 = Node(20)
+        self.assertEqual(n1<n2, True)
+        t_list.add(25)
 
 
 if __name__ == '__main__': 
