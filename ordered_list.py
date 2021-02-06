@@ -69,7 +69,7 @@ class OrderedList:
             return False
         else:
             current = self.head
-            while current:
+            while current.next:
                 if temp == self.head:
                     self.head.next.prev = None
                     self.head = self.head.next
