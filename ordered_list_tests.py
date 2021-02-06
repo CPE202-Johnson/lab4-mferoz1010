@@ -15,12 +15,18 @@ class TestLab4(unittest.TestCase):
         self.assertTrue(t_list.remove(10))
         t_list.add(10)
         self.assertEqual(t_list.pop(0), 10)
-        t_list.add(20)
-        t_list.add(30)
         n1 = Node(10)
         n2 = Node(20)
         self.assertEqual(n1<n2, True)
-        t_list.add(25)
+
+    def test_simple_02(self):
+        t_list = OrderedList()
+        t_list.add(5)
+        t_list.add(10)
+        t_list.add(3)
+        t_list.add(7)
+        self.assertEqual(t_list.python_list(), [3,5,7,10])
+
 
 
 if __name__ == '__main__': 
