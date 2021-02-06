@@ -183,7 +183,7 @@ class OrderedList:
         if self.is_empty():
             return 0
         current = self.head
-        if current.next:
+        if current:
             return 1
         else:
             self.head = self.head.next
