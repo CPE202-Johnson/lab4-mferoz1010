@@ -26,7 +26,11 @@ class TestLab4(unittest.TestCase):
         t_list.add(3)
         t_list.add(7)
         self.assertEqual(t_list.python_list(), [3,5,7,10])
+        self.assertTrue(t_list.remove(7))
 
+    def test_simple_03(self):
+        t_list = OrderedList()
+        self.assertFalse(t_list.remove(10))
 
 
 if __name__ == '__main__': 
