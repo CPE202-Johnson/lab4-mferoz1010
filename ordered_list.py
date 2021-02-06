@@ -172,7 +172,7 @@ class OrderedList:
                 ord_lst = OrderedList()
                 ord_lst.tail = current
                 ord_lst.head = self.head
-                rev_lst.extend(ord_lst.python_list_reversed)
+                rev_lst.extend(ord_lst.python_list_reversed())
             return rev_lst
 
     def size(self):
