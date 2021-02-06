@@ -110,7 +110,7 @@ class OrderedList:
            MUST have O(n) average-case performance'''
         count = 0
         if index < 0 or index >= self.size():
-            return IndexError
+            raise IndexError
         else:
             current = self.head
             count = 0
@@ -190,6 +190,4 @@ class OrderedList:
             lst_size = self.size() + 1
             self.head = current
             return lst_size
-
-
 
