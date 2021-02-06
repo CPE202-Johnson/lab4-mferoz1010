@@ -41,10 +41,9 @@ class OrderedList:
         if self.is_empty():
             self.head = temp
             self.tail = temp
-
         else:
             current = self.head
-            while current.next:
+            while current:
                 if temp < self.head:
                     temp.next = current
                     current.prev = temp
@@ -191,4 +190,6 @@ class OrderedList:
             lst_size = self.size() + 1
             self.head = current
             return lst_size
+
+
 
