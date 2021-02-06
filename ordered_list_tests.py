@@ -36,6 +36,7 @@ class TestLab4(unittest.TestCase):
         t_list = OrderedList()
         self.assertFalse(t_list.remove(10))
         self.assertEqual(t_list.index(10), None)
+        self.assertEqual(t_list.size(), 0)
         with self.assertRaises(IndexError):
             t_list.pop(-1)
         self.assertFalse(t_list.search(10))
@@ -45,6 +46,9 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(t_list.pop(0), 10)
         self.assertTrue(t_list.search(10))
         self.assertEqual(t_list.size(), 1)
+        t_list.add(20)
+        self.assertEqual(t_list.size(), 2)
+
 
 
 if __name__ == '__main__': 
