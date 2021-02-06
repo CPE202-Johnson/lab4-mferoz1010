@@ -182,10 +182,8 @@ class OrderedList:
            MUST have O(n) performance'''
         if self.is_empty():
             return 0
-        current = self.head
-        if current:
-            return 1
         else:
+            current = self.head
             self.head = self.head.next
             lst_size = self.size() + 1
             self.head = current
