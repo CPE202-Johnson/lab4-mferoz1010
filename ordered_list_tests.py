@@ -50,6 +50,10 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(t_list.size(), 1)
         t_list.add(30)
         self.assertTrue(t_list.remove(30))
+        t_list.add(30)
+        self.assertEqual(t_list.pop(1), 30)
+        t_list.add(30)
+        self.assertTrue(t_list.search(30))
 
 
 if __name__ == '__main__': 
