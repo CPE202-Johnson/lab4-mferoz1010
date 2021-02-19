@@ -40,7 +40,7 @@ class OrderedList:
         temp = Node(item)
         if self.is_empty():
             self.head = temp
-            self.tail = temp
+            self.tail = self.head
         else:
             current = self.head
             while current:
@@ -64,23 +64,30 @@ class OrderedList:
         '''Removes the first occurrence of an item from OrderedList. If item is removed (was in the list) 
           returns True.  If item was not removed (was not in the list) returns False
            MUST have O(n) average-case performance'''
-        temp = Node(item)
+        temp_idx = self.index(item)
         if self.is_empty():
             return False
         else:
-            current = self.head
-            while current.next:
-                if temp == self.head:
-                    self.head.next.prev = None
-                    self.head = self.head.next
-                elif temp == self.tail:
-                    self.tail.prev.next = None
-                    self.tail = self.tail.prev
-                else:
-                    if temp == current:
-                        current.prev.next = current.next
-                        current.next.prev = current.prev
-                current = current.next
+            if self.head == self.tail:
+                self.head = None
+                self.tail = self.head
+                return True
+            if item == self.head.item:
+                self.head.next.prev = None
+                self.head = self.head.next
+            elif item == self.tail.item:
+                self.tail.prev.next = None
+                self.tail = self.tail.prev
+            else:
+                current = self.head
+                i = 0
+                while i < temp_idx:
+                    current = current.next
+                    i += 1
+
+                current.prev.next = current.next
+                current.next.prev = current.prev
+
             return True
 
     def index(self, item):
