@@ -44,11 +44,10 @@ class TestLab4(unittest.TestCase):
         self.assertEqual(t_list.python_list_reversed(), [])
         t_list.add(10)
         self.assertEqual(t_list.pop(0), 10)
-        self.assertTrue(t_list.search(10))
-        self.assertEqual(t_list.size(), 1)
+        self.assertFalse(t_list.search(10))
+        self.assertEqual(t_list.size(), 0)
         t_list.add(20)
-        self.assertEqual(t_list.size(), 2)
-
+        self.assertEqual(t_list.size(), 1)
 
 
 if __name__ == '__main__': 
