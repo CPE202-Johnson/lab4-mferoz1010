@@ -13,6 +13,15 @@ class Node:
         if type(self) == type(other):
             return self.item < other.item
 
+    def search_node(self, item):
+        if self.item is item:
+            return True
+        if self.item > item:
+            return False
+        if self.next is None:
+            return False
+        return self.next.search_node(item)
+
 
 class OrderedList:
     '''A doubly-linked ordered list of items, from lowest (head of list) to highest (tail of list)'''
@@ -134,19 +143,11 @@ class OrderedList:
            To practice recursion, this method must call a RECURSIVE method that
            will search the list
            MUST have O(n) average-case performance'''
-        temp = Node(item)
-        check = False
         if self.is_empty():
-            return check
+            return False
         else:
             current = self.head
-            if current == temp:
-                return True
-            else:
-                ord_lst = OrderedList()
-                ord_lst.tail = current.next
-                ord_lst.head = self.head
-                return ord_lst.search(item)
+            return current.search_node(item)
 
     def python_list(self):
         '''Return a Python list representation of OrderedList, from head to tail
